@@ -30,3 +30,25 @@
   transform: scale(1.05);
   transition: 0.2s;
 }
+
+body.menu-open {
+  overflow: hidden;
+}
+
+#mobile-menu.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#menu-btn.is-open #line1 {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#menu-btn.is-open #line2 {
+  opacity: 0;
+}
+
+#menu-btn.is-open #line3 {
+  transform: translateY(-8px) rotate(-45deg);
+}
