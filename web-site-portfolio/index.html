@@ -5,357 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nícolas.dev | Portfólio</title>
+
     <link rel="stylesheet" href="./style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
 </head>
 
 <body class="bg-slate-950 text-slate-100 selection:bg-blue-500 selection:text-white">
 
-    <!-- NAVBAR -->
-    <nav id="navbar"
-        class="fixed top-4 left-1/2 z-[100] w-[95%] -translate-x-1/2 rounded-[2rem] border border-white/20 bg-slate-900/80 border-blue-500/20 backdrop-blur-2xl transition-transform duration-500 md:top-6 md:max-w-6xl shadow-[0_8px_32px_0_rgba(0,0,0,0.1)]">
-            <div class="mx-auto flex h-16 items-center justify-between px-6 md:h-20">
+    <div data-include="./components/navbar.html"></div>
 
-            <a href="#home" class="group z-[110] flex items-center gap-3">
-                <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-950 transition-all group-hover:rotate-[10deg] group-hover:scale-110">
-                    <span class="text-lg font-black text-white italic">N</span>
-                </div>
-                <span class="hidden text-xl font-black italic tracking-tighter text-white sm:block">
-                    NICOLAS.DEV
-                </span>
-            </a>
+    <main>
+        
+        <div data-include="./components/home.html"></div>
+        <div data-include="./components/about.html"></div>
+        <div data-include="./components/skills.html"></div>
+        <div data-include="./components/projects.html"></div>
+        <div data-include="./components/testimonials.html"></div>
+        <div data-include="./components/contact.html"></div>
+    </main>
 
-            <div class="hidden items-center gap-1 md:flex">
-                <a href="#home" class="rounded-full px-5 py-2 text-sm font-bold text-slate-200 transition-all hover:text-white">Início</a>
-                <a href="#sobre" class="rounded-full px-5 py-2 text-sm font-bold text-slate-200 transition-all hover:text-white">Sobre mim</a>
-                <a href="#projetos" class="rounded-full px-5 py-2 text-sm font-bold text-slate-200 transition-all hover:text-white">Projetos</a>
-                <a href="#skills" class="rounded-full px-5 py-2 text-sm font-bold text-slate-200 transition-all hover:text-white">Skills</a>
+    <div data-include="./components/footer.html"></div>
 
-                <a href="#contato"
-                    class="ml-4 rounded-full bg-blue-600 px-8 py-2.5 text-sm font-black text-white transition-all hover:bg-blue-500 hover:scale-105">
-                    CONTATO
-                </a>
-            </div>
-
-            <button id="menu-btn"
-                class="relative z-[110] flex h-10 w-10 flex-col items-center justify-center rounded-full bg-slate-950 md:hidden">
-                <span id="line1" class="h-0.5 w-5 rounded-full bg-white transition-all duration-300"></span>
-                <span id="line2" class="mt-1.5 h-0.5 w-5 rounded-full bg-white transition-all duration-300"></span>
-                <span id="line3" class="mt-1.5 h-0.5 w-5 rounded-full bg-white transition-all duration-300"></span>
-            </button>
-        </div>
-    </nav>
-    <!-- MENU MOBILE -->
-    <div id="mobile-menu"
-        class="pointer-events-none fixed left-0 top-0 z-[90] flex h-screen w-full -translate-y-full flex-col items-center justify-center gap-8 bg-slate-950/98 px-6 pt-24 opacity-0 backdrop-blur-3xl transition-all duration-500 md:hidden">
-
-        <a href="#home" class="mobile-link text-4xl font-black italic text-white">Início</a>
-        <a href="#sobre" class="mobile-link text-4xl font-black italic text-white">Sobre mim</a>
-        <a href="#projetos" class="mobile-link text-4xl font-black italic text-white">Projetos</a>
-        <a href="#skills" class="mobile-link text-4xl font-black italic text-white">Skills</a>
-        <a href="#contato" class="mobile-link text-2xl font-bold text-white uppercase tracking-widest">Contato</a>
-    </div>
-
-    <!-- HERO -->
-    <section id="home" class="min-h-screen flex items-center px-6 pt-32">
-        <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-            <div>
-
-                <h1 class="text-4xl font-black leading-tight md:text-6xl">
-                    Olá, eu sou o Nícolas.
-                    <br>
-                </h1>
-
-                <p class="mt-6 mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
-                    Desenvolvedor Web e Mobile | JavaScript | Python
-                </p>
-
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <button id="btn-curriculo"
-                        class="cursor-pointer rounded-full bg-blue-600 hover:bg-blue-500 px-8 py-3 font-bold text-white transition hover:scale-105">
-                        Baixar currículo
-                    </button>
-
-                    <a href="#contato"
-                        class="rounded-full border-2 border-blue-500 hover:bg-blue-500 hover:text-white px-8 py-3 font-bold transition hover:scale-105">
-                        Entrar em contato
-                    </a>
-
-                </div>  
-            </div>
-
-            <div class="flex justify-center">
-                <div>
-                    <img 
-                    class="w-[350px] h-auto rounded-[2rem] shadow-2xl"
-                    src="/web-site-portfolio/assets/images/foto_perfil.png" 
-                    alt=""
-                    >
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre" class="px-6 py-24">
-        <div class="mx-auto max-w-6xl">
-            <h2 class="text-3xl font-black md:text-4xl">Sobre mim</h2>
-            <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-              Desenvolvedor <b>Full Stack Web e Mobile</b>, especializado na concepção e implementação de aplicações completas, atuando de forma estratégica no <b>front-end e back-end</b>. Focado em arquiteturas bem estruturadas, código limpo e soluções escaláveis, utilizando tecnologias modernas para entregar experiências eficientes e de alta qualidade.
-            </p>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="px-6 py-24 bg-slate-900">
-        <div class="mx-auto max-w-6xl">
-            <h2 class="text-3xl font-black md:text-4xl">Hard Skills</h2>
-
-            <div class="skills-list mt-10 flex flex-wrap gap-4">
-                <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">
-                    <span class="cursor-pointer"><i class=" devicon-html5-plain colored"></i> HTML</span>
-                </a>
-                <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS">
-                    <span class="cursor-pointer"><i class="devicon-css3-plain colored"></i> CSS</span>
-                </a>
-                <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">
-                    <span class="cursor-pointer"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
-                </a>
-                <a href="https://tailwindcss.com/docs/installation/using-vite">
-                    <span class="cursor-pointer"><i class="devicon-tailwindcss-plain colored"></i> Tailwind</span>
-                </a>
-                <a href="https://docs.python.org/3/">
-                    <span class="cursor-pointer"><i class="devicon-python-plain colored"></i> Python</span>
-                </a>
-                <a href="https://flask.palletsprojects.com/en/latest/">
-                    <span><i class="cursor-pointer devicon-flask-original"></i> Flask</span>
-                </a>
-                <a href="https://git-scm.com/docs">
-                    <span class="cursor-pointer"><i class="devicon-git-plain colored"></i> Git</span>
-                </a>
-            </div>
-
-            <h2 class="mt-20 text-3xl font-black md:text-4xl">Soft Skills</h2>
-
-            <div class="mt-10 flex flex-wrap gap-4">
-                <span class="cursor-pointer rounded-full border border-white/30 px-5 py-3 font-semibold text-white transition hover:scale-105">Comunicação</span>
-                <span class="cursor-pointer rounded-full border border-white/30 px-5 py-3 font-semibold text-white transition hover:scale-105">Trabalho em equipe</span>
-                <span class="cursor-pointer rounded-full border border-white/30 px-5 py-3 font-semibold text-white transition hover:scale-105">Proatividade</span>
-                <span class="cursor-pointer rounded-full border border-white/30 px-5 py-3 font-semibold text-white transition hover:scale-105">Organização</span>
-                <span class="cursor-pointer rounded-full border border-white/30 px-5 py-3 font-semibold text-white transition hover:scale-105">Aprendizado Continuo</span>
-                <span class="cursor-pointer rounded-full border border-white/30 px-5 py-3 font-semibold text-white transition hover:scale-105">Resolução de problemas</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJETOS -->
-    <section id="projetos" class="px-6 py-24">
-        <div class="mx-auto max-w-6xl">
-            <h2 class="text-3xl font-black md:text-4xl ">Projetos</h2>
-
-            <div class="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
-                <div
-                    class="w-full h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
-                    data-title="DevFullStack Academy"
-                    data-image="/web-site-portfolio/assets/images/tumbnail_portal_fullstack.png"
-                    data-date="01 de Março de 2026"
-                    data-description1="Plataforma web desenvolvida em Flask que simula uma faculdade de desenvolvimento Full Stack, com foco em organização, autenticação e visualização de cursos."
-                    data-description2="O projeto foi criado para demonstrar estruturação de aplicação web, componentização de interface e uma base escalável para futuras evoluções."
-                    data-features="Cadastro de alunos|Login de usuários|Visualização de cursos|Estrutura escalável e responsiva"
-                    data-project-link="#"
-                    data-repo-link="#"
-                    data-linkedin-link="#"
-                >
-                    <img
-                        class="w-full h-56 object-cover brightness-50 group-hover:brightness-100 transition duration-300"
-                        src="/web-site-portfolio/assets/images/tumbnail_portal_fullstack.png"
-                        alt="Projeto DevFullStack Academy"
-                    >
-
-                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 transition duration-300 text-center px-4">
-                        <p class="text-white text-xl font-semibold">
-                            DevFullStack Academy
-                        </p>
-
-                        <div class="flex gap-1 mt-2">
-                            <i class="devicon-html5-plain colored"></i>
-                            <i class="devicon-css3-plain colored"></i>
-                            <i class="devicon-javascript-plain colored"></i>
-                            <i class="devicon-python-plain colored"></i>
-                            <i class="devicon-flask-original"></i>
-                        </div>
-                    </div>
-
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-3 flex items-center justify-between translate-y-full group-hover:translate-y-0 transition duration-300">
-                        <span class="text-white text-sm">01 de Março de 2026</span>
-
-                        <button class="cursor-pointer bg-blue-500 hover:bg-blue-600 duration-300 text-white px-3 py-1 rounded-full text-sm font-medium transition">
-                            Ver mais
-                        </button>
-                    </div>
-                </div>
-
-                <!-- VoiceFlow AI -->
-                <div
-                    class="h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
-                    data-title="VoiceFlow AI"
-                    data-image="/web-site-portfolio/assets/images/p2.png"
-                    data-date="01 de Março de 2026"
-                    data-description1="Aplicação mobile desenvolvida em React Native que simula a transformação de áudio em tarefas organizadas com apoio de inteligência artificial."
-                    data-description2="O projeto foi pensado para demonstrar criação de interface mobile, fluxo de interação com o usuário e organização visual de informações."
-                    data-features="Simulação de gravação de áudio|Conversão de áudio em tarefas|Interface mobile moderna|Experiência visual organizada"
-                    data-project-link="#"
-                    data-repo-link="#"
-                    data-linkedin-link="#"
-                >
-                    <img
-                        class="w-full h-56 object-cover brightness-50 group-hover:brightness-100 transition duration-300"
-                        src="/web-site-portfolio/assets/images/voiceflow-img.jpg"
-                        alt="Projeto VoiceFlow AI"
-                    >
-
-                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 transition duration-300 text-center px-4">
-                        <p class="text-white text-xl font-semibold">
-                            VoiceFlow AI
-                        </p>
-
-                        <div class="flex gap-1 mt-2">
-                            <i class="devicon-reactnative-original"></i>
-                            <i class="devicon-javascript-plain colored"></i>
-                        </div>
-                    </div>
-
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-3 flex items-center justify-between translate-y-full group-hover:translate-y-0 transition duration-300">
-                        <span class="text-white text-sm">01 de Março de 2026</span>
-
-                        <button class="cursor-pointer bg-blue-500 hover:bg-blue-600 duration-300 text-white px-3 py-1 rounded-full text-sm font-medium transition">
-                            Ver mais
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Hiree -->
-                <div
-                    class="h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
-                    data-title="Hiree"
-                    data-image="/web-site-portfolio/assets/images/p3.png"
-                    data-date="01 de Março de 2026"
-                    data-description1="Plataforma web desenvolvida para simular um portal de vagas voltado para oportunidades remotas na área de tecnologia, com foco em interface moderna e experiência do usuário."
-                    data-description2="O projeto foi pensado como uma aplicação de portfólio para demonstrar habilidades em desenvolvimento front-end e estruturação de interfaces voltadas para produtos reais."
-                    data-features="Exibição de vagas em interface organizada|Estrutura visual moderna e responsiva|Destaque para projetos e navegação intuitiva|Layout pensado para evolução futura"
-                    data-project-link="#"
-                    data-repo-link="#"
-                    data-linkedin-link="#"
-                >
-                    <img
-                        class="w-full h-full object-cover brightness-50 group-hover:brightness-100 transition duration-300"
-                        src="/web-site-portfolio/assets/images/p3.png"
-                        alt="Projeto Hiree"
-                    >
-
-                    <div class="absolute inset-0 flex flex-col items-center justify-center opacity-100 group-hover:opacity-0 transition duration-300 text-center px-4">
-                        <p class="text-white text-xl font-semibold">
-                            Hiree
-                        </p>
-
-                        <div class="flex gap-1 mt-2">
-                            <i class="devicon-html5-plain colored"></i>
-                            <i class="devicon-css3-plain colored"></i>
-                            <i class="devicon-javascript-plain colored"></i>
-                            <i class="devicon-python-plain colored"></i>
-                            <i class="devicon-flask-original"></i>
-                        </div>
-                    </div>
-
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/90 to-transparent p-3 flex items-center justify-between translate-y-full group-hover:translate-y-0 transition duration-300">
-                        <span class="text-white text-sm">01 de Março de 2026</span>
-
-                        <button class="cursor-pointer bg-blue-500 hover:bg-blue-600 duration-300 text-white px-3 py-1 rounded-full text-sm font-medium transition">
-                            Ver mais
-                        </button>
-                    </div>
-                </div>
-
-                <div id="project-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50 p-6 opacity-0 transition duration-300">
-                <div id="modal-content" class="relative w-full max-w-6xl rounded-2xl bg-[#0b1020] shadow-2xl overflow-hidden transform scale-95 translate-y-6 transition duration-300">
-                    <button id="close-modal" class="cursor-pointer absolute top-2 right-4 text-blue-500 text-3xl font-bold hover:scale-110 transition z-10">
-                        &times;
-                    </button>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6 md:p-8">
-                        <div class="flex flex-col justify-between">
-                            <img
-                                id="modal-project-image"
-                                src=""
-                                alt=""
-                                class="w-full h-70 rounded-xl object-cover shadow-lg"
-                            >
-
-                            <div class="flex flex-wrap gap-3 mt-6">
-                                <a id="modal-project-link" href="#" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">
-                                    Acessar projeto
-                                </a>
-
-                                <a id="modal-repo-link" href="#" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">
-                                    Acessar repositório
-                                </a>
-
-                                <a id="modal-linkedin-link" href="#" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition">
-                                    Ver post no LinkedIn
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="text-white">
-                            <h2 id="modal-project-title" class="text-4xl font-bold mb-4"></h2>
-
-                            <p id="modal-project-description1" class="text-gray-300 leading-relaxed mb-6"></p>
-
-                            <p id="modal-project-description2" class="text-gray-300 leading-relaxed mb-6"></p>
-
-                            <h3 class="text-xl font-semibold mb-3">
-                                Principais funcionalidades:
-                            </h3>
-
-                            <ul id="modal-project-features" class="text-gray-300 space-y-2 mb-6"></ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- CONTATO -->
-    <section id="contato" class="px-6 py-24 bg-slate-900 text-white">
-        <div class="mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl font-black md:text-4xl">Contato</h2>
-            <p class="mt-4 text-lg text-slate-300">
-                Quer conversar sobre projetos, estágio ou oportunidades?
-            </p>
-
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
-                <a href="https://www.linkedin.com/in/nicolas-gerbes/" class="rounded-full bg-white px-8 py-3 font-bold text-slate-950 transition hover:scale-105">LinkedIn</a>
-                <a href="https://github.com/nicolasgerbes" class="rounded-full border border-white/30 px-8 py-3 font-bold text-white transition hover:scale-105">GitHub</a>
-                <a href="mailto:nicolasgerbes18@gmail.com"
-                    class="rounded-full border border-white/30 px-8 py-3 font-bold text-white transition hover:scale-105">
-                    E-mail
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="border-t border-white/10 bg-slate-950 px-6 py-6 text-center text-sm text-slate-400">
-        © 2026 Nícolas.dev — Todos os direitos reservados.
-    </footer>
-
-    <script src="scripts/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./scripts/testimonials.js"></script>
+    <script src="./scripts/script.js"></script>
+    
 </body>
+
 </html>
