@@ -199,3 +199,58 @@ body.menu-open {
 #menu-btn.is-open #line3 {
   transform: translateY(-8px) rotate(-45deg);
 }
+
+
+.service-card-hover {
+  transform: translateY(1);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.service-card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+}
+
+.project-card-hover {
+  transform: translateY(0) scale(1);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.project-card-hover:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.45);
+}
+
+.project-image-hover {
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-card-hover:hover .project-image-hover {
+  filter: brightness(0.9);
+  transform: scale(1.03);
+}
+
+.project-info-hover {
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.project-card-hover:hover .project-info-hover {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.project-bottom-hover {
+  transition: transform 0.5s ease;
+}
