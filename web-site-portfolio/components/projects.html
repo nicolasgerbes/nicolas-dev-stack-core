@@ -1,13 +1,15 @@
 <!-- PROJETOS -->
 <section id="projetos" class="px-6 py-24">
     <div class="mx-auto max-w-6xl">
-        <h2 class="text-3xl font-black md:text-4xl">Projetos</h2>
+        <h2 class="reveal text-3xl font-black md:text-4xl">
+            Projetos
+        </h2>
 
         <div class="mt-12 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
             <!-- DevFullStack Academy -->
             <div
-                class="w-full h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
+                class="reveal reveal-delay-1 w-full h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
                 data-title="DevFullStack Academy"
                 data-image="/web-site-portfolio/assets/images/tumbnail_portal_fullstack.png"
                 data-date="01 de Março de 2026"
@@ -49,7 +51,7 @@
 
             <!-- VoiceFlow AI -->
             <div
-                class="h-56 project-card cursor-pointer border-b-4 border-yellow-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
+                class="reveal reveal-delay-2 h-56 project-card cursor-pointer border-b-4 border-yellow-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
                 data-title="VoiceFlow AI"
                 data-image="/web-site-portfolio/assets/images/voiceflow-img.jpg"
                 data-date="Em produção"
@@ -93,10 +95,11 @@
 
             <!-- Hiree -->
             <div
-                class="h-56 project-card cursor-pointer border-b-4 border-yellow-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
+                class="reveal reveal-delay-3 h-56 project-card cursor-pointer border-b-4 border-yellow-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
                 data-title="Hiree"
                 data-image="/web-site-portfolio/assets/images/p3.png"
                 data-date="Em produção"
+                data-status="production"
                 data-description1="Plataforma web desenvolvida para simular um portal de vagas voltado para oportunidades remotas na área de tecnologia, com foco em interface moderna e experiência do usuário."
                 data-description2="O projeto está em produção e segue em evolução, sendo usado para demonstrar habilidades em desenvolvimento front-end, organização de layout e estruturação de uma aplicação voltada para produto real."
                 data-features="Exibição de vagas em interface organizada|Estrutura visual moderna e responsiva|Destaque para projetos e navegação intuitiva|Layout pensado para evolução futura"
@@ -139,7 +142,7 @@
 
             <!-- JobTrack -->
             <div
-                class="h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
+                class="reveal reveal-delay-1 h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
                 data-title="JobTrack"
                 data-image="/web-site-portfolio/assets/images/jobtrack.png"
                 data-date="01 de Março de 2026"
@@ -180,7 +183,7 @@
 
             <!-- MenuGo -->
             <div
-                class="h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
+                class="reveal reveal-delay-2 h-56 project-card cursor-pointer border-b-4 border-blue-500 relative group overflow-hidden shadow-md transition duration-300 hover:scale-105 rounded-xl"
                 data-title="MenuGo"
                 data-image="/web-site-portfolio/assets/images/menugo.png"
                 data-date="01 de Março de 2026"
@@ -253,7 +256,16 @@
                 </div>
 
                 <div class="text-white">
-                    <h2 id="modal-project-title" class="text-4xl font-bold mb-4"></h2>
+                    <div class="mb-4 flex flex-wrap items-center gap-3">
+                        <h2 id="modal-project-title" class="text-4xl font-bold"></h2>
+
+                        <span
+                            id="modal-project-status"
+                            class="hidden rounded-full bg-yellow-500 px-3 py-1 text-xs font-bold text-slate-950"
+                        >
+                            Em produção
+                        </span>
+                    </div>
 
                     <p id="modal-project-description1" class="text-gray-300 leading-relaxed mb-6"></p>
 

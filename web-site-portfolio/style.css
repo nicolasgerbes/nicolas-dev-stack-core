@@ -1,3 +1,150 @@
+:root {
+  --bg-main: #020617;
+  --bg-section: #07111f;
+  --bg-card: #0f172a;
+
+  --text-main: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --blue-main: #2563eb;
+  --blue-soft: rgba(37, 99, 235, 0.12);
+  --border-soft: rgba(148, 163, 184, 0.16);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32rem),
+    linear-gradient(180deg, #020617 0%, #030712 100%);
+  color: var(--text-main);
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+section {
+  position: relative;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #60a5fa;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: #60a5fa;
+}
+
+.clean-card {
+  border: 1px solid var(--border-soft);
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.clean-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(96, 165, 250, 0.45);
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.clean-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 800;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.clean-button:hover {
+  transform: translateY(-2px);
+  background: #3b82f6;
+}
+
+
+.logo-name {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #f8fafc;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.logo-name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  transform: scaleX(0.25);
+  transform-origin: left;
+  opacity: 0.8;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.logo-name:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.logo-name:hover::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.logo-dot {
+  color: #60a5fa;
+}
+
+.logo-dev {
+  color: #93c5fd;
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
 .tec {
     display: flex;
     flex-wrap: wrap;

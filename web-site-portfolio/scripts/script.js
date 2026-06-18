@@ -365,6 +365,38 @@ function initTestimonialsSwiper() {
 }
 
 
+
+/* =========================
+   ANIMAÇÃO AO ENTRAR NA TELA
+========================= */
+
+function initRevealAnimation() {
+  const revealElements = document.querySelectorAll(".reveal");
+
+  if (revealElements.length === 0) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    }
+  );
+
+  revealElements.forEach((element) => {
+    observer.observe(element);
+  });
+}
+
+
 /* =========================
    INÍCIO DA APLICAÇÃO
 ========================= */
@@ -376,6 +408,7 @@ async function startApp() {
   initCurriculumButton();
   initProjectModal();
   initTestimonialsSwiper();
+  initRevealAnimation();
 }
 
 startApp().catch((error) => {
