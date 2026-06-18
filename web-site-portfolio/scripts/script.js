@@ -133,6 +133,10 @@ function initCurriculumButton() {
    MODAL DOS PROJETOS
 ========================= */
 
+/* =========================
+   MODAL DOS PROJETOS
+========================= */
+
 function initProjectModal() {
   const projectCards = document.querySelectorAll(".project-card");
 
@@ -142,6 +146,7 @@ function initProjectModal() {
 
   const modalProjectImage = document.getElementById("modal-project-image");
   const modalProjectTitle = document.getElementById("modal-project-title");
+  const modalProjectStatus = document.getElementById("modal-project-status");
   const modalProjectDescription1 = document.getElementById("modal-project-description1");
   const modalProjectDescription2 = document.getElementById("modal-project-description2");
   const modalProjectFeatures = document.getElementById("modal-project-features");
@@ -167,11 +172,52 @@ function initProjectModal() {
     return;
   }
 
+  modalProjectLink.dataset.originalText = "Acessar projeto";
+  modalRepoLink.dataset.originalText = "Acessar repositório";
+  modalLinkedinLink.dataset.originalText = "Ver post no LinkedIn";
+
+  function setupModalLink(element, url, disabledText, isProduction) {
+    element.classList.remove(
+      "opacity-50",
+      "opacity-60",
+      "cursor-not-allowed",
+      "pointer-events-none",
+      "bg-gray-600",
+      "hover:bg-gray-600"
+    );
+
+    element.classList.add("bg-blue-600", "hover:bg-blue-700");
+    element.setAttribute("target", "_blank");
+
+    if (isProduction || !url || url === "#") {
+      element.removeAttribute("href");
+      element.removeAttribute("target");
+      element.textContent = disabledText;
+
+      element.classList.remove("bg-blue-600", "hover:bg-blue-700");
+      element.classList.add(
+        "bg-gray-600",
+        "hover:bg-gray-600",
+        "opacity-60",
+        "cursor-not-allowed",
+        "pointer-events-none"
+      );
+
+      return;
+    }
+
+    element.href = url;
+    element.textContent = element.dataset.originalText;
+  }
+
   function openModal(card) {
     const title = card.dataset.title || "";
     const image = card.dataset.image || "";
     const description1 = card.dataset.description1 || "";
     const description2 = card.dataset.description2 || "";
+    const status = card.dataset.status || "";
+    const isProduction = status === "production";
+
     const features = card.dataset.features
       ? card.dataset.features.split("|")
       : [];
@@ -187,9 +233,14 @@ function initProjectModal() {
     modalProjectDescription1.textContent = description1;
     modalProjectDescription2.textContent = description2;
 
-    modalProjectLink.href = projectLink;
-    modalRepoLink.href = repoLink;
-    modalLinkedinLink.href = linkedinLink;
+    if (modalProjectStatus) {
+      if (isProduction) {
+        modalProjectStatus.textContent = "Em produção";
+        modalProjectStatus.classList.remove("hidden");
+      } else {
+        modalProjectStatus.classList.add("hidden");
+      }
+    }
 
     modalProjectFeatures.innerHTML = "";
 
@@ -198,6 +249,27 @@ function initProjectModal() {
       li.textContent = `• ${feature}`;
       modalProjectFeatures.appendChild(li);
     });
+
+    setupModalLink(
+      modalProjectLink,
+      projectLink,
+      "Projeto em produção",
+      isProduction
+    );
+
+    setupModalLink(
+      modalRepoLink,
+      repoLink,
+      "Repositório em produção",
+      isProduction
+    );
+
+    setupModalLink(
+      modalLinkedinLink,
+      linkedinLink,
+      "Post em produção",
+      isProduction
+    );
 
     modal.classList.remove("hidden");
     modal.classList.add("flex");
@@ -235,6 +307,12 @@ function initProjectModal() {
 
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.classList.contains("hidden")) {
       closeModal();
     }
   });
