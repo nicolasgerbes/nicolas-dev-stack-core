@@ -253,21 +253,21 @@ function initProjectModal() {
     setupModalLink(
       modalProjectLink,
       projectLink,
-      "Projeto em produção",
+      isProduction ? "Projeto em produção" : "Projeto indisponível",
       isProduction
     );
 
     setupModalLink(
       modalRepoLink,
       repoLink,
-      "Repositório em produção",
+      isProduction ? "Repositório em produção" : "Repositório indisponível",
       isProduction
     );
 
     setupModalLink(
       modalLinkedinLink,
       linkedinLink,
-      "Post em produção",
+      isProduction ? "Post em produção" : "Post indisponível",
       isProduction
     );
 
