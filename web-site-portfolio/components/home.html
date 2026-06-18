@@ -1,41 +1,51 @@
 <!-- HOME -->
-<section id="home" class="min-h-screen flex items-center px-6 pt-32">
-    <div class="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
-        <div>
-            <h1 class="reveal text-4xl font-black leading-tight md:text-6xl">
-                Olá, eu sou o Nícolas.
-                <br>
-            </h1>
+<section
+    id="home"
+    class="relative flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20 text-center bg-no-repeat md:pt-24"
+    style="
+        background-image: url('/web-site-portfolio/assets/images/home-bg.jpg');
+        background-size: cover;
+        background-position: center top;
+    "
+>
+    <div class="absolute inset-0 bg-slate-950/65"></div>
+    <div class="absolute inset-0 bg-blue-950/25"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/45 to-slate-950"></div>
 
-            <p class="reveal reveal-delay-1 mt-6 mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
-                Desenvolvedor Web e Mobile | JavaScript | Python
-            </p>
+    <div class="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center justify-center">
+        <p class="reveal text-sm font-black uppercase tracking-[0.45em] text-blue-400">
+            PORTFÓLIO
+        </p>
 
-            <div class="reveal reveal-delay-2 mt-8 flex flex-wrap gap-4">
-                <button
-                    id="btn-curriculo"
-                    class="cursor-pointer rounded-full bg-blue-600 hover:bg-blue-500 px-8 py-3 font-bold text-white transition hover:scale-105"
-                >
-                    Baixar currículo
-                </button>
+        <h1 class="reveal reveal-delay-1 mt-5 text-5xl font-black leading-tight text-white md:text-7xl">
+            Nícolas Gerbes
+        </h1>
 
-                <a
-                    href="#contato"
-                    class="rounded-full border-2 border-blue-500 hover:bg-blue-500 hover:text-white px-8 py-3 font-bold transition hover:scale-105"
-                >
-                    Entrar em contato
-                </a>
-            </div>
-        </div>
+        <p class="reveal reveal-delay-2 mx-auto mt-6 max-w-3xl text-base font-semibold uppercase tracking-[0.25em] text-slate-300 md:text-lg">
+            DESENVOLVEDOR WEB E MOBILE | JAVASCRIPT | PYTHON
+        </p>
 
-        <div class="reveal reveal-delay-3 flex justify-center">
-            <div>
-                <img
-                    class="w-[350px] h-auto rounded-[2rem] shadow-2xl"
-                    src="/web-site-portfolio/assets/images/foto_perfil.png"
-                    alt="Foto de perfil do Nícolas"
-                >
-            </div>
+        <div class="reveal reveal-delay-3 mt-10 flex flex-wrap justify-center gap-4">
+            <button
+                id="btn-curriculo"
+                class="cursor-pointer rounded-full bg-blue-600 px-8 py-3 font-bold text-white transition hover:scale-105 hover:bg-blue-500"
+            >
+                Baixar currículo
+            </button>
+
+            <a
+                href="#projetos"
+                class="rounded-full border border-white/30 px-8 py-3 font-bold text-white transition hover:scale-105 hover:border-blue-400 hover:bg-blue-500"
+            >
+                Ver projetos
+            </a>
+
+            <a
+                href="#contato"
+                class="rounded-full border border-white/30 px-8 py-3 font-bold text-white transition hover:scale-105 hover:border-blue-400 hover:bg-blue-500"
+            >
+                Contato
+            </a>
         </div>
     </div>
 </section>
