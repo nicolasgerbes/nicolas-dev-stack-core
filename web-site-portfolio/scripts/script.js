@@ -1,6 +1,4 @@
-/* =========================
-   NAVBAR E MENU MOBILE
-========================= */
+/*navbar e menu mobile*/
 
 function initNavbar() {
   const btn = document.getElementById("menu-btn");
@@ -121,8 +119,8 @@ function initCurriculumButton() {
   botaoCurriculo.addEventListener("click", () => {
     const link = document.createElement("a");
 
-    link.href = "./assets/Curriculo_NicolasGerbes.pdf";
-    link.download = "Curriculo-NicolasGerbes.pdf";
+    link.href = "./assets/CurriculoNícolasGerbes.pdf";
+    link.download = "CurriculoNícolasGerbes.pdf";
 
     document.body.appendChild(link);
     link.click();
